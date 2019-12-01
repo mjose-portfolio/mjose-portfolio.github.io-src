@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Taskmaster</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">Portfolio's Marc Jose Rubio <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/TaskMaster.html" rel="bookmark"
+                   title="Permalink to Taskmaster">Taskmaster</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2019-11-29T23:14:00+01:00">
+                Fri 29 November 2019
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/abraham-gimbao.html"> Abraham Gimbao</a>
+                <a class="url fn" href="/author/marc-jose.html"> Marc Jose</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>Your program must be able to start jobs like child processes, let them "live" and restart them if necessary. He must also know to any time if these processes are alive or dead.
+Information on which program to launch, how, how much, if they should be launched restart, etc.... must be contained in a configuration file. You have the choice of format (YAML may be a good idea but it is up to you). This configuration must be started at startup and must be reloadable while taskmaster is turning by sending him a SIGHUP. When it has recharged, your program must apply the changes to its current state (delete programs, add programs, change their control conditions, etc.), but it must NOT delete processes that have not changed with reloading. Your program must have a system of registers to record events in a local file (When a program starts, stops, restarts, when it dies unexpectedly, when the configuration is updated, etc.). Once your program is launched it must remain active in the background and give access to a shell to the user. It MUST not be a shell in its own right like the 42sh, but it must at least have basic functionalities such as line editing, history, etc... self-completion would also be nice. Get inspired by the supervisor shell, supervisorctl.</p>
+<p>This shell must at least allow the user to:</p>
+<div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">See</span> <span class="n">the</span> <span class="n">status</span> <span class="k">of</span> <span class="k">all</span> <span class="n">the</span> <span class="n">programs</span> <span class="n">described</span> <span class="k">in</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="p">(</span><span class="k">with</span> <span class="n">the</span> <span class="ss">&quot;status&quot;</span> <span class="n">command</span><span class="p">).</span>
+
+<span class="o">-</span> <span class="k">Start</span> <span class="o">/</span> <span class="n">stop</span> <span class="o">/</span> <span class="k">restart</span> <span class="n">programs</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Reload</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="k">without</span> <span class="n">the</span> <span class="n">main</span> <span class="n">program</span> <span class="n">stopping</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Stop</span> <span class="n">the</span> <span class="n">main</span> <span class="n">program</span><span class="p">.</span>
+</pre></div>
+
+
+<p>The configuration file must allow the user to specify the following in order to each program must be supervised:</p>
+<div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">The</span> <span class="n">command</span> <span class="k">to</span> <span class="n">use</span> <span class="k">to</span> <span class="n">launch</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">The</span> <span class="nb">number</span> <span class="k">of</span> <span class="n">processes</span> <span class="k">to</span> <span class="k">start</span> <span class="k">and</span> <span class="n">run</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Choose</span> <span class="k">to</span> <span class="n">launch</span> <span class="n">this</span> <span class="n">program</span> <span class="k">at</span> <span class="n">startup</span> <span class="k">or</span> <span class="k">not</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Choose</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">program</span> <span class="n">should</span> <span class="n">always</span> <span class="n">be</span> <span class="n">restarted</span><span class="p">,</span> <span class="n">never</span><span class="p">,</span> <span class="k">or</span> <span class="k">only</span> <span class="k">when</span> <span class="n">it</span> <span class="n">stops</span> <span class="n">unexpectedly</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Which</span> <span class="k">return</span> <span class="n">code</span> <span class="n">represents</span> <span class="n">an</span> <span class="ss">&quot;expected&quot;</span> <span class="k">output</span> <span class="k">of</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">How</span> <span class="n">long</span> <span class="n">does</span> <span class="n">the</span> <span class="n">program</span> <span class="n">have</span> <span class="k">to</span> <span class="n">run</span> <span class="k">after</span> <span class="n">it</span> <span class="n">starts</span> <span class="k">for</span> <span class="n">it</span> <span class="k">is</span> <span class="n">considered</span> <span class="n">that</span> <span class="n">he</span> <span class="n">has</span> <span class="ss">&quot;launched himself correctly&quot;</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">How</span> <span class="n">many</span> <span class="n">times</span> <span class="n">must</span> <span class="n">a</span> <span class="k">restart</span> <span class="n">be</span> <span class="n">performed</span> <span class="k">before</span> <span class="n">stopping</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Which</span> <span class="n">signal</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span> <span class="k">to</span> <span class="n">stop</span> <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span> <span class="n">exit</span> <span class="n">gracefully</span><span class="p">)</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">How</span> <span class="n">many</span> <span class="n">waiting</span> <span class="n">times</span> <span class="k">after</span> <span class="n">a</span> <span class="n">graceful</span> <span class="n">stop</span> <span class="k">before</span> <span class="n">killing</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="k">Options</span> <span class="k">to</span> <span class="n">remove</span> <span class="k">stdout</span><span class="o">/</span><span class="n">stderr</span> <span class="k">from</span> <span class="n">the</span> <span class="n">program</span> <span class="k">or</span> <span class="k">to</span> <span class="n">redirect</span> <span class="k">to</span> <span class="n">files</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="k">Set</span> <span class="n">environment</span> <span class="n">variables</span> <span class="k">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">A</span> <span class="n">working</span> <span class="n">directory</span> <span class="n">a</span> <span class="k">set</span> <span class="k">before</span> <span class="n">starting</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">A</span> <span class="n">umask</span> <span class="n">a</span> <span class="k">set</span> <span class="k">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">program</span><span class="p">.</span>
+</pre></div>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+  <h4>Pages</h4>
+
+  <ul>
+
+  
+
+
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="#">You can add links in your config file</a></li>
+    <li><a href="#">Another social link</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

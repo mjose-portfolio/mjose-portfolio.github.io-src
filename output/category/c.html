@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Portfolio's Marc Jose Rubio - C</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Portfolio's Marc Jose Rubio </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/c.html">C</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/TaskMaster.html">My First Review</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-11-29T23:14:00+01:00">
+                Published: Fri 29 November 2019
+        </abbr>
+		<br />
+        <abbr class="modified" title="2019-11-29T23:21:00+01:00">
+                Updated: Fri 29 November 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/abraham-gimbao.html">Abraham Gimbao</a>
+                        <a class="url fn" href="/author/marc-jose.html">Marc Jose</a>
+        </address>
+<p>In <a href="/category/c.html">C</a>.</p>
+<p>tags: <a href="/tag/c.html">C</a> <a href="/tag/42.html">42</a> </p>
+</footer><!-- /.post-info --><p>Your program must be able to start jobs like child processes, let them "live" and restart them if necessary. He must also know to any
+time if these processes are alive or dead.
+Information on which program to launch, how, how much, if they should be launched
+restart, etc.... must be contained in a configuration file. You have the
+choice of format (YAML may be a good idea but it is up to you). This configuration must be started at startup and must be reloadable while taskmaster
+is turning by sending him a SIGHUP. When it has recharged, your program
+must apply the changes to its current state (delete programs, add programs, change their control conditions, etc.), but it must NOT delete processes that have not changed with reloading.
+Your program must have a system of registers to record events
+in a local file (When a program starts, stops, restarts, when it dies
+unexpectedly, when the configuration is updated, etc.)
+Once your program is launched it must remain active in the background and give access to
+a shell to the user. It MUST not be a shell in its own right like the 42sh, but it
+must at least have basic functionalities such as line editing, history,
+etc... self-completion would also be nice. Get inspired by the supervisor shell,
+supervisorctl.</p>
+<p>This shell must at least allow the user to:
+- See the status of all the programs described in the configuration file (with
+the "status" command)
+- Start / stop / restart programs
+- Reload the configuration file without the main program stopping
+- Stop the main program
+The configuration file must allow the user to specify the following in order to
+each program must be supervised:
+- The command to use to launch the program
+- The number of processes to start and run
+- Choose to launch this program at startup or not
+- Choose whether the program should always be restarted, never, or only when it
+stops unexpectedly
+- Which return code represents an "expected" output of the program
+- How long does the program have to run after it starts for
+it is considered that he has "launched himself correctly"
+- How many times must a restart be performed before stopping
+- Which signal should be used to stop (i.e. exit gracefully) the program
+- How many waiting times after a graceful stop before killing the program
+- Options to remove stdout/stderr from the program or to redirect to
+files
+- Set environment variables before running the program
+- A working directory a set before starting the program
+- A umask a set before running the program</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
