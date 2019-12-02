@@ -1,49 +1,70 @@
-Title: Taskmaster
+Title: TaskMaster
 Date: 2019-11-29 23:14
 Modified: 2019-11-29 23:21
 Category: Python
 Tags: Python, 42
 Slug: TaskMaster
 Authors: Abraham Gimbao, Marc Jose
-Summary: It is a question of creating a job control program, in the language of your choice. What you will be asked to accomplish is very close to the supervisor program.
+Summary: Basic task manager that reads from a config.json file and supervises a number of processes.
 
-Your program must be able to start jobs like child processes, let them "live" and restart them if necessary. He must also know to any time if these processes are alive or dead.
-Information on which program to launch, how, how much, if they should be launched restart, etc.... must be contained in a configuration file. You have the choice of format (YAML may be a good idea but it is up to you). This configuration must be started at startup and must be reloadable while taskmaster is turning by sending him a SIGHUP. When it has recharged, your program must apply the changes to its current state (delete programs, add programs, change their control conditions, etc.), but it must NOT delete processes that have not changed with reloading. Your program must have a system of registers to record events in a local file (When a program starts, stops, restarts, when it dies unexpectedly, when the configuration is updated, etc.). Once your program is launched it must remain active in the background and give access to a shell to the user. It MUST not be a shell in its own right like the 42sh, but it must at least have basic functionalities such as line editing, history, etc... self-completion would also be nice. Get inspired by the supervisor shell, supervisorctl.
+Basic task manager that reads from a config.json file and supervises a number of processes.
+We were restricted to our language of choice’s standard library. Except for the config file parsing.
 
-This shell must at least allow the user to:
+The script reads the tasks parameters from the json file, and executes some kind of user prompt to effectively manage these tasks.
 
-    - See the status of all the programs described in the configuration file (with the "status" command).
+The only argument needed is a config file. All info about making your own config file is in exampleconfig.json.
 
-    - Start / stop / restart programs.
+[Try it on Github!](https://github.com/mjose-portfolio/42-TaskMaster)
 
-    - Reload the configuration file without the main program stopping.
+## Install
 
-    - Stop the main program.
+- Not needed.
 
-The configuration file must allow the user to specify the following in order to each program must be supervised:
+## Configuration
 
-    - The command to use to launch the program.
+- Create a file in json format with the following characteristics:
 
-    - The number of processes to start and run.
 
-    - Choose to launch this program at startup or not.
+```
+{                                   
+    "programs": {                   #a list of programs
+        "sleep": {                  #the name of a program *Required*
+            "cmd": "sleep 1000",    #the exact command to launch *Required*
+            "cmdammount": 10,       #the number of times you need to launch this process *Required*
+            "autostart": true,      #cmd started at launch True/False? *Required*
+            "autorestart": "never", #restart this program on "never", "always", or on "unexpected" termination *Required*
+            "starttime": 5,         #amount of time to go by before the program is considered "succesfully started" *Required*
+            "stoptime": 10,         #amount of time to go by after sending quitsit to program before killing it completely with SIGKILL *Required*
+            "restartretries": 3,    #amount of times a program will be tried to be restarted or started at the beginning before giving up on it *Required*
+            "quitsig": "TERM",      #signal that will be sent to the command to be gracefully exited (QUIT, TERM, INT, KILL) *Required*
+            "exitcodes": "None",    #exitcodes that define an expected termination for use autorestart or None for all exitcodes being considered unexpected
+            "workingdir": "/tmp/",  #working directory to be set for the command or None for same working dir as parent(taskmaster)
+            "umask": 0,             #umask to be set for the program or None (in decimal (integer)!)
+            "stdout": "None",       #option to redirect stdout to file or to simple discard it with "discard" or None
+            "stderr": "None",       #option to redirect stderr to file or to simple discard it with "discard" or None
+            "env": "None"           #extra env parameters to provide to the new process, "None" for no environment at all, or "default" for the same env as taskmaster
+        }
+    }
+}
+```
 
-    - Choose whether the program should always be restarted, never, or only when it stops unexpectedly.
+## Launching method
 
-    - Which return code represents an "expected" output of the program.
+- `python3 taskmaster.py config_files/<yourconfig>.json`
 
-    - How long does the program have to run after it starts for it is considered that he has "launched himself correctly".
+## Commands
 
-    - How many times must a restart be performed before stopping.
+- `help`: List available commands with "help" or detailed help with "help cmd".
+- `help <command>`: Prints the description and the method of use of the command.
+- `start <program>`: Starts desired program(s). Usage -> start <program name(s)>
+- `stop <program>`: Stops desired program(s). Usage -> stop <program name(s)>
+- `restart <program>`: Restarts desired program(s) that has already been launched. Usage -> restart <program name(s)>
+- `reload`: Reloads the whole configuration. Usage -> reload
+- `display`: Opens a window that shows the pre-loaded configuration and the status of the programs to be monitored.
 
-    - Which signal should be used to stop (i.e. exit gracefully) the program.
+## Examples
 
-    - How many waiting times after a graceful stop before killing the program.
-
-    - Options to remove stdout/stderr from the program or to redirect to files.
-
-    - Set environment variables before running the program.
-
-    - A working directory a set before starting the program.
-
-    - A umask a set before running the program.
+![alt text](images/taskmaster/start_taskmaster.gif)
+![alt text](images/taskmaster/start_ls.gif)
+![alt text](images/taskmaster/display_command.gif)
+![alt text](images/taskmaster/display.gif)
