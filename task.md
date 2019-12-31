@@ -1,11 +1,4 @@
-Title: TaskMaster
-Date: 2019-11-29 23:14
-Modified: 2019-11-29 23:21
-Category: Python
-Tags: Python, 42
-Slug: TaskMaster
-Authors: Abraham Gimbao, Marc Jose
-Summary: Basic task manager that reads from a config.json file and supervises a number of processes.
+# 42-TaskMaster
 
 Basic task manager that reads from a config.json file and supervises a number of processes.
 We were restricted to our language of choice’s standard library. Except for the config file parsing.
@@ -13,8 +6,6 @@ We were restricted to our language of choice’s standard library. Except for th
 The script reads the tasks parameters from the json file, and executes some kind of user prompt to effectively manage these tasks.
 
 The only argument needed is a config file. All info about making your own config file is in exampleconfig.json.
-
-[Try it on Github!](https://github.com/mjose-portfolio/42-TaskMaster)
 
 ## Project partners
 
@@ -69,7 +60,7 @@ The only argument needed is a config file. All info about making your own config
 
 ## Examples
 
-![alt text]({static}resources/42-TaskMaster/images/start_taskmaster.gif)
-![alt text]({static}resources/42-TaskMaster/images/start_ls.gif)
-![alt text]({static}resources/42-TaskMaster/images/display_command.gif)
-![alt text]({static}resources/42-TaskMaster/images/display.gif)
+![alt text](README_resources/start_taskmaster.gif)
+![alt text](README_resources/start_ls.gif)
+![alt text](README_resources/display_command.gif)
+![alt text](README_resources/display.gif)

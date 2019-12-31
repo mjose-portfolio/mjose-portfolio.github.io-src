@@ -5,7 +5,7 @@ Category: Python
 Tags: Python, 42
 Slug: TaskMaster
 Authors: Abraham Gimbao, Marc Jose
-Summary: Basic task manager that reads from a config.json file and supervises a number of processes.
+Description: Basic task manager that reads from a config.json file and supervises a number of processes.
 
 Basic task manager that reads from a config.json file and supervises a number of processes.
 We were restricted to our language of choice’s standard library. Except for the config file parsing.
@@ -15,11 +15,6 @@ The script reads the tasks parameters from the json file, and executes some kind
 The only argument needed is a config file. All info about making your own config file is in exampleconfig.json.
 
 [Try it on Github!](https://github.com/mjose-portfolio/42-TaskMaster)
-
-## Project partners
-
-- [Abraham Gimbao](https://github.com/abguimba)
-- [Marc Jose](https://github.com/mjose-portfolio)
 
 ## Install
 
@@ -69,7 +64,7 @@ The only argument needed is a config file. All info about making your own config
 
 ## Examples
 
-![alt text]({static}resources/42-TaskMaster/images/start_taskmaster.gif)
-![alt text]({static}resources/42-TaskMaster/images/start_ls.gif)
-![alt text]({static}resources/42-TaskMaster/images/display_command.gif)
-![alt text]({static}resources/42-TaskMaster/images/display.gif)
+![alt text](images/taskmaster/start_taskmaster.gif)
+![alt text](images/taskmaster/start_ls.gif)
+![alt text](images/taskmaster/display_command.gif)
+![alt text](images/taskmaster/display.gif)

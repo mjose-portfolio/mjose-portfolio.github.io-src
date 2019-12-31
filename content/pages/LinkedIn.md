@@ -1,1 +1,0 @@
-Title: [LinkedIn](https://www.linkedin.com/in/marc-jose-rubio-0b8420158)
