@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Marc Jose Rubio'
 SITENAME = "Portfolio's Marc Jose Rubio"
-SITEURL = 'http://localhost:8000/'
+#SITEURL = 'http://localhost:8000/'
+SITEURL = 'https://mjose-portfolio.github.io/'
 
 #THEME = 'themes/gum'
 #THEME = 'themes/gum'
