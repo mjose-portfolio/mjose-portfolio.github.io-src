@@ -5,12 +5,39 @@ from __future__ import unicode_literals
 AUTHOR = 'Marc Jose Rubio'
 SITENAME = "Portfolio's Marc Jose Rubio"
 #SITEURL = 'http://localhost:8000/'
-SITEURL = 'https://mjose-portfolio.github.io/'
+SITEURL = 'https://mjose-portfolio.github.io'
+#DISQUS_SITENAME = 'https://mjose-portfolio.github.io/'
 
 #THEME = 'themes/gum'
 #THEME = 'themes/gum'
+#THEME = 'themes/blue-penguin'
 THEME = 'themes/blue-penguin'
+#THEME = 'themes/bootstrap2-dark'
+#THEME = 'themes/elegant'
+#THEME = 'themes/franticworld'
+#THEME = 'themes/gum'
+#THEME = 'themes/new-bootstrap2'
+#THEME = 'themes/notebook'
+#THEME = 'themes/zurb-F5-basic'
+
 PATH = 'content'
+
+
+
+#PLUGIN_PATHS = ['pelican-plugins']
+#PLUGINS = [
+#            'permalinks'
+#        ]
+MARKDOWN = {
+    "extension_configs": {
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        'markdown.extensions.toc': {
+            'permalink': ' ',
+            },
+    }
+}
+
 
 TIMEZONE = 'Europe/Paris'
 
@@ -54,15 +81,18 @@ ARCHIVES_URL       = 'archives'
 ARCHIVES_SAVE_AS   = 'archives/index.html'
 
 MENU_INTERNAL_PAGES = (
-    ('Tags', TAGS_URL, TAGS_SAVE_AS),
-    ('Authors', AUTHORS_URL, AUTHORS_SAVE_AS),
-    ('Categories', CATEGORIES_URL, CATEGORIES_SAVE_AS),
+#    ('Tags', TAGS_URL, TAGS_SAVE_AS),
+#    ('Authors', AUTHORS_URL, AUTHORS_SAVE_AS),
+#    ('Categories', CATEGORIES_URL, CATEGORIES_SAVE_AS),
     ('Archives', ARCHIVES_URL, ARCHIVES_SAVE_AS),
 )
 
 MENUITEMS = (
     ('GitHub', 'https://github.com/mjose-portfolio'),
     ('LinkedIn', 'https://www.linkedin.com/in/marc-jose-rubio-0b8420158/'),
+    ('@', 'mailto:marc.jose.portfolio@gmail.com'),
+    ('CV(fr)', 'https://mjose-portfolio.github.io/MarcJoseRubio.Fr.pdf'),
+    ('CV(en)', 'https://mjose-portfolio.github.io/MarcJoseRubio.En.pdf'),
 )
 
 # example pagination pattern

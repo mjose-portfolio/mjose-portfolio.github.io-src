@@ -14,7 +14,18 @@
 		{% endif %}                
                 
 
-                {{ article.content }}
+                <!-- /#posts-list 
+                {{ article.content }} -->
+                {{ article.summary }}
+                <div>
+                    <a href="{{ SITEURL }}/{{ article.url }}">Click here to read more</a>
+                </div>
+                {% if article.github %}
+                <div>
+                    <a href="{{ article.github }}">Try it on Github!</a>
+                </div>
+                {% endif %}
+
                 <div class="clear"></div>
 
                 <div class="info">
