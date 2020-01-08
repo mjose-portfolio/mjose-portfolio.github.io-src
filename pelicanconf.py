@@ -90,9 +90,10 @@ MENU_INTERNAL_PAGES = (
 MENUITEMS = (
     ('GitHub', 'https://github.com/mjose-portfolio'),
     ('LinkedIn', 'https://www.linkedin.com/in/marc-jose-rubio-0b8420158/'),
-    ('@', 'mailto:marc.jose.portfolio@gmail.com'),
-    ('CV(fr)', 'https://mjose-portfolio.github.io/MarcJoseRubio.Fr.pdf'),
+    ('Mail', 'mailto:marc.jose.portfolio@gmail.com'),
     ('CV(en)', 'https://mjose-portfolio.github.io/MarcJoseRubio.En.pdf'),
+    ('CV(fr)', 'https://mjose-portfolio.github.io/MarcJoseRubio.Fr.pdf'),
+    ('CV(esp)', 'https://mjose-portfolio.github.io/MarcJoseRubio.Esp.pdf'),
 )
 
 # example pagination pattern
